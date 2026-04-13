@@ -1,10 +1,10 @@
 # MZ-700_SD+偽RAMFILE複合ボード
 
-![MZ-700_SD](https://github.com/yanataka60/MZ-2000_SD-NiseRamFile-/blob/main/JPEG/TITLE.JPG)
+![MZ-700_SD](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/TITLE.JPG)
 
 しっぽいいんちょさんが作られた「偽RAMFILE for MZ-1500」を元にしてMZ-700_SDを合体させてボードです。
 
-オマケとしてMZ-1500のサウンド機能を付加してMZ-1500用アプリケーションも楽しめるようにしてみました。あくまでオマケですので完全にMZ-1500と同等になるかは未検証です。
+オマケとしてMZ-1500のサウンド機能を付加してMZ-1500用ゲームのサウンドも鳴るようにしてみました。あくまでオマケですので完全にMZ-1500と同等になるかは未検証です。
 
 以下の機能があります。
 
@@ -26,7 +26,7 @@
 
 ・EXT-ROM領域のRAM化(MZ-700_SDからEXT-ROM領域にEXT-ROMのLOADが可能です)
 
-MZ-700_SD: https://github.com/yanataka60/MZ-2000_SD
+MZ-700_SD: https://github.com/yanataka60/MZ-700_SD
 
 なおこの基板は、しっぽいいんちょさんの「偽1500 for MZ-700」のnise1500.uf2を書き込めば「偽1500 for MZ-700」になります。
 
@@ -37,9 +37,9 @@ MZ-700_SD: https://github.com/yanataka60/MZ-2000_SD
 ## 回路図
 　KiCadフォルダ内のMZ-700_SD+NRF.pdfを参照してください。
 
-[回路図](https://github.com/yanataka60/MZ-2000_SD-NiseRamFile-/blob/main/Kiacd/MZ-2000_SD%2BNRF.pdf)
+[回路図](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/KiCad/MZ-700_SD%2BNRF.pdf)
 
-![MZ-700_SD](https://github.com/yanataka60/MZ-2000_SD-NiseRamFile-/blob/main/Kiacd/MZ-2000_SD%2BNRF_1.jpg)
+![MZ-700_SD](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/KiCad/MZ-700_SD%2BNRF_1.jpg)
 
 |番号|品名|数量|備考|
 | ------------ | ------------ | ------------ | ------------ |
@@ -80,7 +80,7 @@ MicroSD Card Adapterについているピンヘッダを除去してハンダ付
 
 ハンダ付けに自信のない方はJ5の秋月電子通商　AE-microSD-LLCNVをお使いください。AE-microSD-LLCNVならパワーLED、アクセスLEDが付いています。
 
-![MicroSD Card Adapter1](https://github.com/yanataka60/MZ-2000_SD-NiseRamFile-/blob/main/JPEG/MicroSD%20Card%20Adapter.JPG)
+![MicroSD Card Adapter1](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/MicroSD%20Card%20Adapter.JPG)
 
 ## 偽RAMFILE for MZ-700の書込み
 　RP2350Bフォルダにあるniseramfile.uf2をRP2350Bマイコンボードに書き込みます。
