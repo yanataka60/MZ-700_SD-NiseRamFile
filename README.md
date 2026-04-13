@@ -143,15 +143,15 @@ MZ-80K_SD:https://github.com/yanataka60/MZ80K_SD
 
 　EMMとSlotとのやり取りはI/Oポートから指示します。
 
-#### SlotxxからEMM1への復帰
+#### SlotxxからEMM0への復帰
 |アドレス|R/W|説明|
 | ------------ | ------------ | ------------ |
-|8Ch|W|指定したSlot番号(0～31)のSlotの内容をEMM1に復帰|
+|8Ch|W|指定したSlot番号(0～31)のSlotの内容をEMM0に復帰|
 
-#### EMM1からSlotxxへの退避
+#### EMM0からSlotxxへの退避
 |アドレス|R/W|説明|
 | ------------ | ------------ | ------------ |
-|8Dh|W|指定したSlot番号(0～31)のSlotへEMM1の内容を退避|
+|8Dh|W|指定したSlot番号(0～31)のSlotへEMM0の内容を退避|
 
 HuBASICからは以下のようになります。
 
@@ -213,30 +213,28 @@ https://github.com/yanataka60/MZ80K_SD
 ## MZ-1500用ゲーム(アプリケーション)の実行
 　MZ-1500用ゲーム(アプリケーション)が動作するかもしれないのはあくまでもオマケです。動作したらラッキーぐらいでお願いします。
 
-　アプリケーション内でLOAD、SAVEするにはMZ-1500_SDでアプリケーション内でのLOAD、SAVEに対応している必要があります。
+　なお、QD用ソフトは、事前にMZTファイル化しておいてください。
 
-　次の段階で試してください。
+　また、アプリケーション内でLOAD、SAVEするにはMZ-1500_SDでアプリケーション内でのLOAD、SAVEに対応している必要があります。
 
-　①FDL、FDコマンドでLOAD実行。
+　次の段階で試してみてください。
 
-　②多段LOADの場合は、FDL、FDコマンドでLOAD実行(PCG定義)。リセットして２段目をFDL、FDコマンドでLOAD実行(ゲーム本体)。
-
-　③FDL、FDコマンドで1Z-009B_LauncherをLOAD実行し、1Z-009B_LauncherからFDL、FDコマンドでLOAD実行。
-
-　④FDL、FDコマンドで1Z-009B_LauncherをLOAD実行後、1Z-009B_LauncherからMZ-1500用EXT-ROM(E800h～FFFFh、実行アドレスE800h)をLOAD実行、MキーでMONITOR 9Z-502Mを起動したら「J0000」を実行して1Z-009B_Launcherに戻り、目的のアプリケーションをFDL、FDコマンドでLOAD実行。
-
+#### ①FDL、FDコマンドでLOAD実行。
 　①で動いたもの
 
 　　いぬふとさんのゲーム、PACKMAN、ICE BLOCK
 
+#### ②多段LOADの場合は、FDL、FDコマンドでLOAD実行(PCG定義)。リセットして２段目をFDL、FDコマンドでLOAD実行(ゲーム本体)。
 　②で動いたもの
 
 　　DOORDOORmk2、FLAPPY、RALLY-X、ヴォルガード、DIGDUG、ドルアーガの塔、MAPPY、GALAGA
 
+#### ③FDL、FDコマンドで1Z-009B_LauncherをLOAD実行し、1Z-009B_LauncherからFDL、FDコマンドでLOAD実行。
 　③で動いたもの
 
 　　サンダーフォース、BASIC MZ-5Z001(もしかしたら④の方が良いのかも)
 
+#### ④FDL、FDコマンドで1Z-009B_LauncherをLOAD実行後、1Z-009B_LauncherからMZ-1500用EXT-ROM(E800h～FFFFh、実行アドレスE800h)をLOAD実行、MキーでMONITOR 9Z-502Mを起動したら「J0000」を実行して1Z-009B_Launcherに戻り、目的のアプリケーションをFDL、FDコマンドでLOAD実行。
 　④で動いたもの
 
 　　今のところ④が必要となったものには出会っていません。もしかしたらBASIC MZ-5Z001の機能のうち、EXT-ROMを必要とするものがあるかもしれません。
