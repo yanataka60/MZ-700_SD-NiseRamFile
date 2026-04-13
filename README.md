@@ -2,11 +2,11 @@
 
 ![MZ-700_SD](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/TITLE.JPG)
 
-しっぽいいんちょさんが作られた「偽RAMFILE for MZ-1500」を元にしてMZ-700_SDを合体させてボードです。
+　しっぽいいんちょさんが作られた「偽RAMFILE for MZ-1500」を元にしてMZ-700_SDを合体させてボードです。
 
-オマケとしてMZ-1500のサウンド機能を付加してMZ-1500用ゲームのサウンドも鳴るようにしてみました。あくまでオマケですので完全にMZ-1500と同等になるかは未検証です。
+　オマケとしてMZ-1500のサウンド機能を付加してMZ-1500用ゲームのサウンドも鳴るようにしてみました。あくまでオマケですので完全にMZ-1500と同等になるかは未検証です。
 
-以下の機能があります。
+　以下の機能があります。
 
 ・MZ-700_SDの起動及びMZ-700_SDの機能
 
@@ -28,9 +28,11 @@
 
 MZ-700_SD: https://github.com/yanataka60/MZ-700_SD
 
-なおこの基板は、しっぽいいんちょさんの「偽1500 for MZ-700」のnise1500.uf2を書き込めば「偽1500 for MZ-700」になります。
+　「偽RAMFILE for MZ-1500」にはMZ-1R12 SRAMメモリエミュレータの機能がありますが、MZ-700_SDの起動用に使用しているのでMZ-1R12 SRAMメモリエミュレータとしては使用できません。
 
-どちらかのuf2ファイルを選んで書き込んでください。
+　なおこの基板は、しっぽいいんちょさんの「偽1500 for MZ-700」のnise1500.uf2を書き込めば「偽1500 for MZ-700」になります。
+
+　どちらかのuf2ファイルを選んで書き込んでください。
 
 偽1500 for MZ-700:https://github.com/shippoiincho/nise1500
 
@@ -76,9 +78,9 @@ MZ-700_SD: https://github.com/yanataka60/MZ-700_SD
 
 　　　　　J6に取り付けます。
 
-MicroSD Card Adapterについているピンヘッダを除去してハンダ付けするのが一番確実ですが、J6の穴にMicroSD Card Adapterをぴったりと押しつけ、裏から多めにハンダを流し込むことでハンダ付けをする方法もあります。なお、この方法の時にはしっかりハンダ付けが出来たかテスターで導通を確認しておいた方が安心です。
+　MicroSD Card Adapterについているピンヘッダを除去してハンダ付けするのが一番確実ですが、J6の穴にMicroSD Card Adapterをぴったりと押しつけ、裏から多めにハンダを流し込むことでハンダ付けをする方法もあります。なお、この方法の時にはしっかりハンダ付けが出来たかテスターで導通を確認しておいた方が安心です。
 
-ハンダ付けに自信のない方はJ5の秋月電子通商　AE-microSD-LLCNVをお使いください。AE-microSD-LLCNVならパワーLED、アクセスLEDが付いています。
+　ハンダ付けに自信のない方はJ5の秋月電子通商　AE-microSD-LLCNVをお使いください。AE-microSD-LLCNVならパワーLED、アクセスLEDが付いています。
 
 ![MicroSD Card Adapter1](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/MicroSD%20Card%20Adapter.JPG)
 
@@ -89,8 +91,8 @@ MicroSD Card Adapterについているピンヘッダを除去してハンダ付
 
 　書き込みが終了するとパソコンからはUSBとして見えなくなりますのでそうなったらケーブルを抜いて終了です。
 
-## MZ-700_SD用ROMプログラムをMZ-1R12 SRAMメモリ 0番バックアップスロットへ書き込み
-　MZ-700_SD/EMMフォルダ内のFD_rom1.bin又はFD_rom.binをMZ-1R12 SRAMメモリ 0番バックアップスロットへ書き込んでください。
+## MZ-700_SD用ROMプログラムの書き込み
+　MZ-700_SD/EMMフォルダ内のFD_rom1.bin又はFD_rom.binをRP2350BのフラッシュROMへ書き込みます。
 
 https://github.com/yanataka60/MZ-700_SD/blob/main/EMM/FD_rom.BIN
 
@@ -99,7 +101,7 @@ https://github.com/yanataka60/MZ-700_SD/blob/main/EMM/FD_rom.BIN
 https://github.com/raspberrypi/pico-sdk-tools
 
 ```
-picotool.exe load -v -x BOOT_A_LOADER.bin  -t bin -o 0x10080000
+picotool.exe load -v -x FD_rom1.bin  -t bin -o 0x10080000
 ```
 
 　また、EMM0に起動可能な内容(HuBASIC起動イメージ)があればEMMからの起動が可能です。
