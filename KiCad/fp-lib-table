@@ -1,0 +1,5 @@
+(fp_lib_table
+  (lib (name MZ80k_SD)(type KiCad)(uri $[KIPRJMOD])(options "")(descr ""))
+  (lib (name MZ-1500)(type KiCad)(uri ${KIPRJMOD}/MZ-1500.pretty)(options "")(descr ""))
+  (lib (name RCA)(type KiCad)(uri ${KIPRJMOD}/RCA.pretty)(options "")(descr ""))
+)
