@@ -227,7 +227,7 @@ https://github.com/yanataka60/MZ80K_SD
 #### ②多段LOADの場合は、FDL、FDコマンドでLOAD実行(PCG定義)。リセットして２段目をFDL、FDコマンドでLOAD実行(ゲーム本体)。
 　②で動いたもの
 
-　　DOORDOORmk2、FLAPPY、RALLY-X、ヴォルガード、DIGDUG、ドルアーガの塔、MAPPY、GALAGA
+　　DOORDOORmk2、FLAPPY、RALLY-X、ヴォルガード、DIGDUG、MAPPY、GALAGA、ドルアーガの塔(遊べますが外壁PCG定義が変です)
 
 #### ③FDL、FDコマンドで1Z-009B_LauncherをLOAD実行し、1Z-009B_LauncherからFDL、FDコマンドでLOAD実行。
 　③で動いたもの
