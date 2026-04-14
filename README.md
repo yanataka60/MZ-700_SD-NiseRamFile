@@ -24,15 +24,15 @@
 
 ・MZ-1500相当のサウンドエミュレート(SN76489x2、8253)
 
-・EXT-ROM領域(E800h～FFFFh)のRAM化(MZ-700_SDからEXT-ROM領域にEXT-ROMのLOADが可能です)
+・EXT-ROM領域(E800h～FFFFh)のRAM化(起動時にはF000h～FFFFhにMZ-700_SD用ROMの内容が自動的に書き込まれます。1Z-009B_LauncherをLOAD起動後であればEXT-ROMをファイル化したEXT-ROM.MZTをEXT-ROM領域にLOADが可能です)
 
 MZ-700_SD: https://github.com/yanataka60/MZ-700_SD
 
-　「偽RAMFILE for MZ-1500」にはMZ-1R12 SRAMメモリエミュレータの機能がありますが、MZ-700_SDの起動用に使用しているのでMZ-1R12 SRAMメモリエミュレータとしては使用できません。
+　「偽RAMFILE for MZ-1500」にはMZ-1R12 SRAMメモリエミュレータの機能がありますが、MZ-700_SDの起動用に使用しているのでMZ-1R12 SRAMメモリエミュレータとしての機能は使用できません。
 
 　なおこの基板は、しっぽいいんちょさんの「偽1500 for MZ-700」のnise1500.uf2を書き込めば「偽1500 for MZ-700」になります。
 
-　どちらかのuf2ファイルを選んで書き込んでください。
+　「偽1500 for MZ-700」とはフラッシュROMの使い方が違いますのでuf2ファイルを書き込んだときはそれぞれの説明に従ったフラッシュROMへの書込みを行ってください。
 
 偽1500 for MZ-700:https://github.com/shippoiincho/nise1500
 
