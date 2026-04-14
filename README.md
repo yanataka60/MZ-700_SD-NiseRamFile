@@ -2,7 +2,7 @@
 
 ![MZ-700_SD](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/TITLE.JPG)
 
-　しっぽいいんちょさんが作られた「偽RAMFILE for MZ-1500」を元にしてMZ-700_SDを合体させてボードです。
+　しっぽいいんちょさんが作られた「偽RAMFILE for MZ-1500」を元にしてMZ-700_SDを合体させたボードです。
 
 　オマケとしてMZ-1500のサウンド機能を付加してMZ-1500用ゲームのサウンドも鳴るようにしてみました。あくまでオマケですので完全にMZ-1500と同等になるかは未検証です。
 
