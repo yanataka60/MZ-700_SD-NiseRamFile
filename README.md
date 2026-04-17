@@ -87,7 +87,7 @@ MZ-700_SD: https://github.com/yanataka60/MZ-700_SD
 
 ![MicroSD Card Adapter1](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/MicroSD%20Card%20Adapter.JPG)
 
-##Rev1.2回路の修正
+## Rev1.2回路の修正
 　Rev1.2の回路に誤りがありました。LPF用コンデンサ(C2)を取り外し、基板ハンダ面よりR4の出力側になるように取り付けてください。
 
 ![MicroSD Card Adapter1](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/Rev12Debug1.JPG)
