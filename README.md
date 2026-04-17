@@ -6,6 +6,8 @@
 
 　オマケとしてMZ-1500のサウンド機能を付加してMZ-1500用ゲームのサウンドも鳴るようにしてみました。あくまでオマケですので完全にMZ-1500と同等になるかは未検証です。
 
+#### 2026.4.17 Rev1.2の回路中LPFのコンデンサの位置に誤りがありました。後述「Rev1.2回路の修正」によりコンデンサの位置を修正してください。なお、近日中に修正した回路及び基板に差し替えます。
+
 　以下の機能があります。
 
 ・MZ-700_SDの起動及びMZ-700_SDの機能
@@ -59,7 +61,8 @@ MZ-700_SD: https://github.com/yanataka60/MZ-700_SD
 |U4|Arduino_Pro_Mini_5V|1|Atmega328版を使用 168版は不可。(注3)|
 |U6|74LS30|1||
 ||RP2350Bボード(Raspberry Pi Pico 2)|1|Amazon WA00021 RP2350Bマイコンボードなど|
-|C1-C3,C5|積層セラミックコンデンサ 0.1uF|4||
+|C1,C3,C5|積層セラミックコンデンサ 0.1uF|3||
+|C2|積層セラミックコンデンサ 0.1uF|1|後述「Rev1.2回路の修正」の取付位置にしてください|
 |C6|電解コンデンサ 16v100uF|1||
 |R1-R3|カーボン抵抗 330Ω|3||
 |R4|カーボン抵抗 1kΩ|1||
@@ -83,6 +86,13 @@ MZ-700_SD: https://github.com/yanataka60/MZ-700_SD
 　ハンダ付けに自信のない方はJ5の秋月電子通商　AE-microSD-LLCNVをお使いください。AE-microSD-LLCNVならパワーLED、アクセスLEDが付いています。
 
 ![MicroSD Card Adapter1](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/MicroSD%20Card%20Adapter.JPG)
+
+##Rev1.2回路の修正
+　Rev1.2の回路に誤りがありました。LPF用コンデンサ(C2)を取り外し、基板ハンダ面よりR4の出力側になるように取り付けてください。
+
+![MicroSD Card Adapter1](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/Rev12Debug1.JPG)
+
+![MicroSD Card Adapter1](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/Rev12Debug2.JPG)
 
 ## 偽RAMFILE for MZ-700の書込み
 　RP2350Bフォルダにあるniseramfile.uf2をRP2350Bマイコンボードに書き込みます。
@@ -259,3 +269,5 @@ https://github.com/yanataka60/MZ80K_SD
 ## 謝辞
 　素晴らしい拡張モジュールを開発し、自由に改変・公開を快く承諾してくださったしっぽいいんちょさん、ありがとうございました。
 
+## 追記
+2026.4.17 Rev1.2回路でLPFのコンデンサの位置に誤りがありました。すーぱーたーぼさん、ご指摘ありがとうございます。
