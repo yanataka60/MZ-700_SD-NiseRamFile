@@ -62,7 +62,7 @@ MZ-700_SD: https://github.com/yanataka60/MZ-700_SD
 |U6|74LS30|1||
 ||RP2350Bボード(Raspberry Pi Pico 2)|1|Amazon WA00021 RP2350Bマイコンボードなど|
 |C1,C3,C5|積層セラミックコンデンサ 0.1uF|3||
-|C2|積層セラミックコンデンサ 0.1uF|1|後述「Rev1.2回路の修正」の取付位置にしてください|
+|C2|積層セラミックコンデンサ 0.01uF|1|0.1uFから0.01uFに変更。後述「Rev1.2回路の修正」の取付位置にしてください|
 |C6|電解コンデンサ 16v100uF|1||
 |R1-R3|カーボン抵抗 330Ω|3||
 |R4|カーボン抵抗 1kΩ|1||
@@ -88,7 +88,7 @@ MZ-700_SD: https://github.com/yanataka60/MZ-700_SD
 ![MicroSD Card Adapter1](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/MicroSD%20Card%20Adapter.JPG)
 
 ## Rev1.2回路の修正
-　Rev1.2の回路に誤りがありました。LPF用コンデンサ(C2)を取り外し、基板ハンダ面よりR4の出力側になるように取り付けてください。
+　Rev1.2の回路に誤りがありました。LPF用コンデンサ(C2)を取り外し、0.01uFに変更の上、基板ハンダ面よりR4の出力側になるように取り付けてください。
 
 ![MicroSD Card Adapter1](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/Rev12Debug1.JPG)
 
