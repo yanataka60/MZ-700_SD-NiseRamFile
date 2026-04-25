@@ -4,9 +4,9 @@ EELAYER END
 $Descr User 17000 11000
 encoding utf-8
 Sheet 1 1
-Title "MZ-700_SD"
+Title "MZ-700_SD+NiseRamFile"
 Date "2022-01-14"
-Rev "Rev1.6"
+Rev "Rev1.5"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -1434,27 +1434,22 @@ $EndComp
 Wire Wire Line
 	14600 5850 14750 5850
 Wire Wire Line
-	14300 5850 14100 5850
-Wire Wire Line
 	12550 7100 12250 7100
 $Comp
 L Device:C C2
 U 1 1 69CE90A8
-P 14100 6200
-F 0 "C2" V 13950 6300 50  0000 C CNN
-F 1 "0.1uF" V 13950 6050 50  0000 C CNN
-F 2 "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm" H 14138 6050 50  0001 C CNN
-F 3 "~" H 14100 6200 50  0001 C CNN
-	1    14100 6200
+P 14600 6200
+F 0 "C2" V 14450 6300 50  0000 C CNN
+F 1 "0.01uF" V 14450 6050 50  0000 C CNN
+F 2 "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm" H 14638 6050 50  0001 C CNN
+F 3 "~" H 14600 6200 50  0001 C CNN
+	1    14600 6200
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	14100 6050 14100 5850
-Connection ~ 14100 5850
+	14600 6050 14600 5850
 Wire Wire Line
-	14100 6350 14100 6450
-Wire Wire Line
-	14100 6450 14950 6450
+	14600 6350 14600 6450
 Connection ~ 14950 6450
 Wire Wire Line
 	14950 6450 14950 6500
@@ -1470,8 +1465,6 @@ Text Label 13450 8200 2    50   ~ 0
 M1
 Wire Wire Line
 	13450 8200 13050 8200
-Wire Wire Line
-	12250 5850 14100 5850
 Wire Wire Line
 	12250 5850 12250 7100
 NoConn ~ 12550 6900
@@ -1568,4 +1561,9 @@ Wire Wire Line
 Wire Wire Line
 	13200 4700 14750 4700
 NoConn ~ 13050 7500
+Wire Wire Line
+	14600 6450 14950 6450
+Wire Wire Line
+	12250 5850 14300 5850
+Connection ~ 14600 5850
 $EndSCHEMATC
