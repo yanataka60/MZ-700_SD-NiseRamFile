@@ -271,7 +271,7 @@ https://github.com/yanataka60/MZ80K_SD
 ### MZ-700_SD+偽RAMFILE複合ボード対応BASIC MZ-5Z001
 　前述「MZ-1500用ゲーム(アプリケーション)の実行」の③又は④でBASIC MZ-5Z001は実行可能ですが、SDを使用するにはSD用パッチあてが必要です。
 
-　MZ-1500_SDとMZ-700_SDではArduinoのI/Oアドレスに違いがあるためMZ-1500_SD対応パッチを当てたBASIC MZ-5Z001はそのままでは使えませんので以下の修正を行ってください。
+　MZ-1500_SDとMZ-700_SDではArudinoをコントロールする8255のI/Oアドレスに違いがあり、MZ-1500_SD対応パッチを当てたBASIC MZ-5Z001はそのままでは使えないのでバイナリエディタで以下の修正を行ってください。
 
 　「BASIC 1Z-5Z001-SD.MZT」(AUTORUN未対応版 42581Byte)
 |MZTアドレス|修正前|修正後|
