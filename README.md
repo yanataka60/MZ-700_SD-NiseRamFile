@@ -268,6 +268,31 @@ https://github.com/yanataka60/MZ80K_SD
 
 　この時、実行アドレスをE800hとしておきます。
 
+## 専用トレイとカバー
+　専用トレイとカバーを作ってみました。
+
+　トレイはCMTユニットを引っ掛ける手前のツメの下に潜り込ませるように入れます。
+
+　カバーは手前からかぶせてツメに引っ掛けます。
+
+　カバーを外すときは背面からトレイごと持ち上げるようにすると外れます。
+
+　カバー内は、RP2350Bがギリギリ入る高さ16mmほどです。Arduino、SDカードユニットにソケットを使うときはその高さに収まる背の低いタイプを使ってください。
+
+![Tray+Cover1](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/Tray%2BCover1.JPG)
+
+![Tray+Cover2](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/Tray%2BCover2.JPG)
+
+![Tray+Cover3](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/Tray%2BCover3.JPG)
+
+![Tray+Cover4](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/Tray%2BCover4.JPG)
+
+![Tray+Cover5](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/Tray%2BCover5.JPG)
+
+![Tray+Cover6](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/Tray%2BCover6.JPG)
+
+　
+
 ## 開発環境、使用ライブラリなど
 　開発環境は、Visual Studio Codeです。
 
@@ -284,3 +309,5 @@ https://github.com/yanataka60/MZ80K_SD
 2026.4.18 書き込み(USB-Cケーブル接続)時の注意を追記しました。
 
 2026.4.25 Rev1.5を公開しました。
+
+2026.4.30 トレイとカバーのSTLファイルを追加しました。
