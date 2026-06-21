@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 1
 Title "MZ-700_SD+NiseRamFile"
 Date "2022-01-14"
-Rev "Rev1.5"
+Rev "Rev1.6"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -1132,8 +1132,8 @@ F 3 " ~" H 14800 7900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	10450 6800 10050 6800
-Text Label 10050 6800 0    50   ~ 0
+	11650 6800 11250 6800
+Text Label 11500 6800 0    50   ~ 0
 +5V
 Text Label 10050 7200 0    50   ~ 0
 D3
@@ -1232,7 +1232,6 @@ Wire Wire Line
 Wire Wire Line
 	10050 8200 10450 8200
 NoConn ~ 10450 7000
-NoConn ~ 10950 6800
 NoConn ~ 12550 7000
 NoConn ~ 12550 7300
 NoConn ~ 12550 7400
@@ -1566,4 +1565,16 @@ Wire Wire Line
 Wire Wire Line
 	12250 5850 14300 5850
 Connection ~ 14600 5850
+NoConn ~ 10450 6800
+$Comp
+L Device:D D1
+U 1 1 6A1E0307
+P 11100 6800
+F 0 "D1" H 11100 7017 50  0000 C CNN
+F 1 "1N5819" H 11150 6900 50  0000 C CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 11100 6800 50  0001 C CNN
+F 3 "~" H 11100 6800 50  0001 C CNN
+	1    11100 6800
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
