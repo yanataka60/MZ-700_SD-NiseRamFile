@@ -92,7 +92,7 @@ MZ-700_SD: https://github.com/yanataka60/MZ-700_SD
 
 ![MicroSD Card Adapter1](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/MicroSD%20Card%20Adapter.JPG)
 
-## Rev1.2回路の修正(Rev1.2のみ、最新Rev1.5では修正しています)
+## Rev1.2回路の修正(Rev1.2のみ、Rev1.5以降では修正しています)
 　Rev1.2の回路に誤りがありました。LPF用コンデンサ(C2)を取り外し、0.01uFに変更の上、基板ハンダ面よりR4の出力側になるように取り付けてください。
 
 ![MicroSD Card Adapter1](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/Rev12Debug1.JPG)
@@ -108,13 +108,13 @@ MZ-700_SD: https://github.com/yanataka60/MZ-700_SD
 
 ### 書き込み(USB-Cケーブル接続)時の注意
 #### Rev1.5基板
-##### 　USB-Cケーブルを接続するときは、USB-C以外からMZ-700_SD+偽RAMFILE複合ボードに電源が供給されないようにしてください。
+　USB-Cケーブルを接続するときは、USB-C以外からMZ-700_SD+偽RAMFILE複合ボードに電源が供給されないようにしてください。
 
-https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/USB-C.JPG
+![USB-C](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/USB-C.JPG)
 
-##### 　MZ-700内部から内部電源として供給しているならMZ-700の電源は必ず切っておく、ACアダプタから外部電源として供給しているなら電源ジャックから外しておいてください。
+　MZ-700内部から内部電源として供給しているならMZ-700の電源は必ず切っておく、ACアダプタから外部電源として供給しているなら電源ジャックから外しておいてください。
 
-##### 　また、書き込み終わったらUSB-Cは必ず外してください。
+　また、書き込み終わったらUSB-Cは必ず外してください。
 
 #### Rev1.6基板
 　対策済みです。USB-Cケーブルを接続するときにUSB-C以外からMZ-700_SD+偽RAMFILE複合ボードに電源が供給されていても問題は無くなっていますが、書き込むときにはUSB-Cケーブル以外から電源が供給されていない状態で行う方が無難です。
