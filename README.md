@@ -110,7 +110,7 @@ MZ-700_SD: https://github.com/yanataka60/MZ-700_SD
 #### Rev1.2基板、Rev1.5基板
 　USB-Cケーブルを接続するときは、USB-C以外からMZ-700_SD+偽RAMFILE複合ボードに電源が供給されないようにしてください。
 
-![USB-C](https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/USB-C.JPG)
+<img src="https://github.com/yanataka60/MZ-700_SD-NiseRamFile/blob/main/JPEG/USB-C.JPG" width="50%">
 
 　MZ-700内部から内部電源として供給しているならMZ-700の電源は必ず切っておく、ACアダプタから外部電源として供給しているなら電源ジャックから外しておいてください。
 
