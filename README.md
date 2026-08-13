@@ -42,6 +42,21 @@ MZ-700_SD: https://github.com/yanataka60/MZ-700_SD
 
 偽1500 for MZ-700:https://github.com/shippoiincho/nise1500
 
+### (2026.8.13追記)すねいるさんのBARYONに対応するためArduinoプログラムを更新しました。また、ROMプログラムも合わせて更新することで多段ロードにも対応します。
+
+### 多段ロードの詳細についてはMZ-80K_SDの「BARYON対応」「多段ロード対応」を参照してください。
+
+　BARYON対応:https://github.com/yanataka60/MZ80K_SD#baryon%E5%AF%BE%E5%BF%9C2026813
+
+　多段ロード対応:https://github.com/yanataka60/MZ80K_SD#%E5%A4%9A%E6%AE%B5%E3%83%AD%E3%83%BC%E3%83%89%E5%AF%BE%E5%BF%9C2026813
+
+　Arduinoプログラム、ROMプログラムともMZ-80K_SD用に更新したものがそのまま使えます。
+
+### BARYON起動時にE800h以降にも書き込み動作を行うようです。MZ-80K_SD、MZ-700_SDでは問題ありませんが、MZ-700_SD+偽RAMFILE複合ボードではE800h以降もRAM扱いとしていたため、SDアクセスルーチンが破壊されてしまいます。
+
+### 当面、E800h以降はROM扱いに変更しましたのでRP2350Bフォルダにあるniseramfile.uf2でRP2350Bマイコンボードを書き換えてください。
+
+
 ## 回路図
 　KiCadフォルダ内のMZ-700_SD+NRF.pdfを参照してください。
 
@@ -121,9 +136,13 @@ MZ-700_SD: https://github.com/yanataka60/MZ-700_SD
 
 
 ## MZ-700_SD用ROMプログラムの書き込み
-　MZ-700_SD/EMMフォルダ内のFD_rom1.bin又はFD_rom.binをRP2350BのフラッシュROMへ書き込みます。
+~~MZ-700_SD/EMMフォルダ内のFD_rom1.bin又はFD_rom.binをRP2350BのフラッシュROMへ書き込みます。~~
 
-https://github.com/yanataka60/MZ-700_SD/blob/main/EMM/FD_rom.BIN
+~~https://github.com/yanataka60/MZ-700_SD/blob/main/EMM/FD_rom.BIN~~
+
+(2026.8.13)多段ロード対応に伴い、MZ-80K_SDに統合しました。MZ-80K_SD/Z80フォルダ内のFD_rom.BINを使ってください。
+
+https://github.com/yanataka60/MZ80K_SD/blob/main/Z80/FD_rom.BIN
 
 　書き込みにはpicotool.exeが必要となります。以下のウェブページ右側の「Releases」からダウンロードできます。
 
@@ -268,6 +287,8 @@ https://github.com/yanataka60/MZ80K_SD
 
 　　今のところ④が必要となったものには出会っていません。もしかしたらBASIC MZ-5Z001の機能のうち、EXT-ROMを必要とするものがあるかもしれません。
 
+　　(2026.8.13追記)当面、E800h以降はROM扱いに変更しましたので④は使えなくなります。
+
 ### 1Z-009B_Launcherの作り方
 　1Z-009B_Launcherフォルダにある1Z-009B_SD.mzt(2531Byte)の後ろにMZ-1500実機から抽出した1Z-009B MONITOR(0000h～0FFFh)をバイナリエディタなどで連結して保存してください。
 
@@ -361,3 +382,5 @@ https://github.com/yanataka60/MZ80K_SD
           MZ-700_SD+偽RAMFILE複合ボード対応BASIC MZ-5Z001にするための修正点を追記。
 
 2026.6.21 MZ-700_SD+偽RAMFILE複合ボードに電源が供給されている状態でUSB-Cケーブルを接続してはいけない問題に対してすーぱーたーぼさんからご指摘いただいた対策を施しました。
+
+2026.8.13 BARYONに対応しました。retrogamer128さんの要望により多段ロードに対応しました。
