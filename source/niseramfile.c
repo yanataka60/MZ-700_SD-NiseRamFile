@@ -498,7 +498,7 @@ static inline void memory_write(uint16_t address, uint8_t data)
     } else if(vram_enabled && (address < 0xE000)) {
         vram[address & 0xFFF] = data;
     } else if(vram_enabled && (address >= 0xE800)) {
-        mz1r12[address - 0xE800] = data;
+//        mz1r12[address - 0xE800] = data;
     } else if(vram_enabled) {
         switch(address) {
             case 0xE002: // i8255 ポートC
