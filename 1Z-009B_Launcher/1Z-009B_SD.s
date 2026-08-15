@@ -162,9 +162,10 @@ INIT2:	LD		A,00H      ;PORTA <- 0
 
 ;**** LOAD ****
 ;受信ヘッダ情報をセットし、SDカードからLOAD実行
-SDLOAD:	LD		A,81H  ;LOADコマンド81H
+SDLOAD:	JP		KZCHK2
+		LD		A,81H  ;LOADコマンド81H
 		CALL	STCMD
-		CALL	HDRCV      ;ヘッダ情報受信
+SDLOAD2:CALL	HDRCV      ;ヘッダ情報受信
 
 ;***** 0000h～CFFFhまでのロードを確保するためにロードルーチンだけをD400hに転送、SPをD7FFhに設定してD400hへジャンプ
 		LD		SP,0D800H
@@ -1031,8 +1032,9 @@ MLHED:
 		PUSH	BC
 		PUSH	HL
 		CALL	INIT
+		JP		KZCHK
 
-		LD		B,08H      ;LBUFを0DHで埋めファイルネームが指定されなかったことにする
+MLH00:	LD		B,08H      ;LBUFを0DHで埋めファイルネームが指定されなかったことにする
 		LD		DE,LBUF
 		LD		A,0DH
 MLH0:	LD		(DE),A
@@ -1061,7 +1063,7 @@ MLH6:	LD		DE,MSG_DNAME   ;'DOS FILE:'
 		CP		'*'
 		JR		Z,MLHCMD
 
-		LD		A,93H      ;HEADER LOADコマンド93H
+MLH7:	LD		A,93H      ;HEADER LOADコマンド93H
 		CALL	MCMD       ;コマンドコード送信
 		AND		A          ;00以外ならERROR
 		JP		NZ,MERR
@@ -1082,7 +1084,7 @@ MLH4:	LD		A,(DE)     ;FNAME送信
 		LD		A,0DH
 		CALL	SNDBYTE
 		
-		CALL	RCVBYTE    ;状態取得(00H=OK)
+MLH41:	CALL	RCVBYTE    ;状態取得(00H=OK)
 		AND		A          ;00以外ならERROR
 		JP		NZ,MERR
 
@@ -1262,6 +1264,67 @@ MERRMSG:
 		SCF
 
 		RET
+
+
+;******************** 多段ロードCHECK *********************
+KZCHK:
+		LD		A,96H      ;継続ロードCHECKコマンド96H
+		CALL	MCMD       ;コマンドコード送信
+		AND		A          ;00以外ならERROR
+		JP		NZ,MERR
+
+		CALL	RCVBYTE		;多段ロードフラグ受け取り
+		AND		A			;00以外なら通常LOAD
+		JP		NZ,MLH00	;多段ロードではない。通常処理にRETURN
+
+		JP		MLH41		;多段ロード処理。IFB受信へ
+
+KZCHK2:
+		LD		A,96H
+
+		CALL	STCD       ;コマンドコード送信
+		AND		A          ;00以外ならERROR
+		JP		NZ,SVERR
+
+		CALL	RCVBYTE
+		AND		A
+		JR		NZ,KZCHK3
+
+		CALL	RCVBYTE    ;状態取得(00H=OK)
+		AND		A          ;00以外ならERROR
+		JP		NZ,SVERR
+
+		CALL	RCVBYTE    ;状態取得(00H=OK)
+		AND		A          ;00以外ならERROR
+		JP		NZ,SVERR
+
+		LD		HL,IBUFE
+		LD		B,80H
+KZC5:	CALL	RCVBYTE    ;読みだされたインフォメーションブロックを受信
+		LD		(HL),A
+;		CALL	PRTBYT
+		INC		HL
+		DEC		B
+		JR		NZ,KZC5
+
+		CALL	RCVBYTE    ;状態取得(00H=OK)
+		AND		A          ;00以外ならERROR
+		JP		NZ,SVERR
+
+;***** 0000h～CFFFhまでのロードを確保するためにロードルーチンだけをD400hに転送、SPをD7FFhに設定してD400hへジャンプ
+		LD		SP,0D800H
+		
+		LD		HL,DBRCV0
+		LD		DE,DBRCV2
+		LD		BC,ENT6-DBRCV2
+		LDIR
+
+		JP		DBRCV2     ;データ受信
+
+KZCHK3:	LD		A,81H  ;LOADコマンド81H
+		CALL	STCMD
+		JP		SDLOAD2
+
 
 DBRCV0:
 		ORG		0D400H
